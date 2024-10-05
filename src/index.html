@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="wonderful indonesia">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Indonesia touristm website" />
 
-    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="/styles/output.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <title>Wonderful Indonesia</title>
-</head>
-<body>
+    <title>Visit Indonesia</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="bg-black text-white p-6">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- logo -->
+        <div>
+          <a href="index.html"
+            ><img src="/public/logo.png" alt="logo" class="shrink-0 h-12"
+          /></a>
+        </div>
 
-</body>
+        <!-- navbar -->
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#" class="hover:text-orange-400">Destinations</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-400">Things To Do</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-400">Experiences</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-400">Plan Your Trip</a>
+            </li>
+            <box-icon
+              class="fill-white hover:fill-orange-400"
+              type="solid"
+              name="map"
+            ></box-icon>
+            <box-icon
+              class="fill-white hover:fill-orange-400"
+              name="search"
+            ></box-icon>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- hero -->
+
+    <!-- section -->
+    
+    <div id="map" style="height: 600px"></div>
+
+    <!-- footer -->
+
+    <!-- scripts -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  </body>
 </html>

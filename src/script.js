@@ -6,10 +6,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const map = L.map("map", {
     center: [-2.5, 118],
-    zoom: 5,
-    minZoom: 5,
-    maxZoom: 5,
-    worldCopyJump: false,
+    zoom: 4,
+    minZoom: 3
   });
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       [-90, 180],
     ],
     {
-      color: "b;ack",
+      color: "black",
       weight: 0,
       fill: true,
       fillColor: "black",

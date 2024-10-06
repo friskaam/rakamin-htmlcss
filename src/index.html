@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="keywords" content="Indonesia touristm website"/>
 
-  <link rel="stylesheet" href="/styles/output.css"/>
+  <link rel="stylesheet" href="../styles/output.css"/>
+  <link rel="stylesheet" href="../styles/custom.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <link rel="icon" href="../public/logo.png" type="image/png"/>
 
@@ -25,10 +26,9 @@
       <!-- navbar -->
       <nav class="hidden md:flex">
         <ul class="flex space-x-6 text-lg font-semibold">
-          <li><a href="#" class="hover:text-orange-400">Destinations</a></li>
-          <li><a href="#" class="hover:text-orange-400">Things To Do</a></li>
-          <li><a href="#" class="hover:text-orange-400">Experiences</a></li>
-          <li><a href="#" class="hover:text-orange-400">Plan Your Trip</a></li>
+          <li><a href="#destination" class="hover:text-orange-400">Destinations</a></li>
+          <li><a href="#thingstodo" class="hover:text-orange-400">Things To Do</a></li>
+          <li><a href="#plantrip" class="hover:text-orange-400">Plan Your Trip</a></li>
           <li>
             <a href="#"><box-icon class="fill-white hover:fill-orange-400" type="solid" name="map"></box-icon></a>
           </li>
@@ -45,16 +45,17 @@
       </div>
     </div>
     <!-- mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-black p-4">
-      <ul class="flex flex-col space-y-2 items-center">
-        <li><a href="#" class="hover:text-orange-400">Destinations</a></li>
-        <li><a href="#" class="hover:text-orange-400">Things To Do</a></li>
-        <li><a href="#" class="hover:text-orange-400">Experiences</a></li>
-        <li><a href="#" class="hover:text-orange-400">Plan Your Trip</a></li>
-        <li><a href="#" class="hover:text-orange-400">Maps</a></li>
-        <li><a href="#" class="hover:text-orange-400">Search</a></li>
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+      <box-icon id="close-menu" class="absolute top-4 right-4 fill-white text-2xl" name='x' ></box-icon>
+      <ul class="flex flex-col space-y-2">
+        <li><a href="#destination" class="hover:text-orange-400 text-white">Destinations</a></li>
+        <li><a href="#thingstodo" class="hover:text-orange-400 text-white">Things To Do</a></li>
+        <li><a href="#plantrip" class="hover:text-orange-400 text-white">Plan Your Trip</a></li>
+        <li><a href="#" class="hover:text-orange-400 text-white">Maps</a></li>
+        <li><a href="#" class="hover:text-orange-400 text-white">Search</a></li>
       </ul>
     </div>
+
   </header>
 
   <!-- carousel -->
@@ -87,7 +88,7 @@
   </section>
 
   <!-- destination section -->
-  <section class="mt-6 p-6">
+  <section class="mt-6 p-6" id="destination">
     <h2 class="text-center text-3xl font-bold">Explore Our Destinations</h2>
     <div class="mx-auto p-3">
       <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -124,40 +125,208 @@
     </div>
   </section>
 
-  <!-- what to do section -->
+  <section class="mt-6 p-6 bg-black text-white">
+    <h2 class="text-center text-lg font-bold">VisitIndonesia - The Tourism Website of Indonesia</h2>
+    <div class="m-6 flex flex-wrap gap-6 justify-evenly">
+  
+      <div class="flex items-center rounded-lg p-4 shadow-md w-64 border border-orange-400">
+        <div class="bg-orange-400 rounded-full p-3 flex items-center justify-center">
+          <box-icon type='solid' name='directions' class="fill-white text-2xl"></box-icon>
+        </div>
+        <p class="ml-3">Providing you with inspirational activities and experiences.</p>
+      </div>
+  
+      <div class="flex items-center rounded-lg p-4 shadow-md w-64 border border-orange-400">
+        <div class="bg-orange-400 rounded-full p-3 flex items-center justify-center">
+          <box-icon type='solid' name='book-heart' class="fill-white text-2xl"></box-icon>
+        </div>
+        <p class="ml-3">Your guidance and information about travelling to Indonesia.</p>
+      </div>
+  
+      <div class="flex items-center rounded-lg p-4 shadow-md w-64 border border-orange-400">
+        <div class="bg-orange-400 rounded-full p-3 flex items-center justify-center">
+          <box-icon name='images' class="fill-white text-2xl"></box-icon>
+        </div>
+        <p class="ml-3">Helping the travel industry showcase the best of Indonesia.</p>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- things to do section -->
+  <section class="mt-6 p-6" id="thingstodo">
+    <h2 class="text-center text-2xl sm:text-3xl font-bold mb-6">Things to Do in Indonesia</h2>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-3">
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/jakarta-experience.jpg" alt="Explore Jakarta by Bike"
+          class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Explore Jakarta by Bike</h3>
+          <p class="text-sm">Discover the historic charm of Kota Lama, Jakarta’s old town, on a guided cycling tour. Enjoy
+            the beautiful architecture and vibrant street art...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/bromo.jpg" alt="Hiking Mount Bromo" class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Hiking Mount Bromo</h3>
+          <p class="text-sm">Hike to the viewpoint of Mount Bromo to catch a breathtaking sunrise over the volcanic
+            landscape. This iconic trek offers stunning views...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/yogyakarta.jpg" alt="Yogyakarta Cultural Tour"
+          class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Yogyakarta Cultural Tour</h3>
+          <p class="text-sm">Discover the rich cultural heritage of Yogyakarta through traditional dance performances,
+            Batik workshops, and visits to ancient temples...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/diving-raja-ampat.jpg" alt="Diving in Raja Ampat"
+          class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Diving in Raja Ampat</h3>
+          <p class="text-sm">Experience some of the best diving in the world in Raja Ampat, an archipelago known for its
+            stunning biodiversity...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/bali-rafting.jpg" alt="Water Rafting in Bali"
+          class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Water Rafting in Bali</h3>
+          <p class="text-sm">Get your adrenaline pumping with white water rafting in Bali, where the Ayung River offers an
+            exhilarating experience for adventure seekers...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg shadow-xl flex flex-col border">
+        <img src="../public/night-market.jpg" alt="Night Market Culinary"
+          class="w-full rounded-lg aspect-[3/4] object-cover mb-4">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Night Market Culinary</h3>
+          <p class="text-sm">Dive into the vibrant atmosphere of Indonesia's night markets, where the sights, sounds, and
+            aromas create a feast for the senses...</p>
+          <a href="#" class="text-orange-500 hover:underline text-end text-sm">Read More</a>
+        </div>
+      </div>
+  
+    </div>
+    <div class="mt-6 text-center">
+      <a href="#"
+        class="inline-block rounded-lg border border-black px-6 py-2 font-bold hover:bg-black hover:text-orange-400 transition duration-300">
+        See More
+      </a>
+    </div>
+  </section>
 
   <!-- experience/gallery section -->
+  <section class="mt-6 p-6">
+    <h2 class="text-center text-3xl font-bold mb-6">Gallery</h2>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  
+      <div class="relative rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105">
+        <div class="bg-cover bg-center aspect-[3/2]" style="background-image: url('../public/danau-toba.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 flex items-end justify-center">
+          <h3 class="text-sm md:text-md font-bold text-white mb-4">Danau Toba, Sumatera Utara</h3>
+        </div>
+        <div class="absolute top-4 right-4">
+          <box-icon name='camera' class="fill-white text-2xl"></box-icon>
+        </div>
+      </div>
+  
+      <div class="relative rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105">
+        <div class="bg-cover bg-center aspect-[3/2]" style="background-image: url('../public/pulau-kenawa.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 flex items-end justify-center">
+          <h3 class="text-sm md:text-md font-bold text-white mb-4">Pulau Kenawa, Nusa Tenggara Barat</h3>
+        </div>
+        <div class="absolute top-4 right-4">
+          <box-icon name='camera' class="fill-white text-2xl"></box-icon>
+        </div>
+      </div>
+  
+      <div class="relative rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105">
+        <div class="bg-cover bg-center aspect-[3/2]" style="background-image: url('../public/likupang.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 flex items-end justify-center">
+          <h3 class="text-sm md:text-md font-bold text-white mb-4">Pulau Likupang, Sulawesi Utara</h3>
+        </div>
+        <div class="absolute top-4 right-4">
+          <box-icon name='camera' class="fill-white text-2xl"></box-icon>
+        </div>
+      </div>
+  
+      <div
+        class="relative rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 md:col-span-2">
+        <div class="bg-cover bg-center aspect-[3/2]" style="background-image: url('../public/labuan-cermin.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 flex items-end justify-center">
+          <h3 class="text-sm md:text-md font-bold text-white mb-4">Danau Labuan Cermin, Kalimantan Utara</h3>
+        </div>
+        <div class="absolute top-4 right-4">
+          <box-icon name='camera' class="fill-white text-2xl"></box-icon>
+        </div>
+      </div>
+  
+      <div class="relative rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105">
+        <div class="bg-cover bg-center aspect-[3/2] md:w-full md:h-full" style="background-image: url('../public/pulau-padar.jpg');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 hover:bg-opacity-10 flex items-end justify-center">
+          <h3 class="text-sm md:text-md font-bold text-white mb-4">Pulau Padar, Nusa Tenggara Timur</h3>
+        </div>
+        <div class="absolute top-4 right-4">
+          <box-icon name='camera' class="fill-white text-2xl"></box-icon>
+        </div>
+      </div>
+  
+    </div>
+  </section>
 
   <!-- map section -->
-  <section class="mt-6 bg-black text-white p-6">
-    <div class="container mx-auto flex flex-col md:flex-row justify-evenly">
+  <section class="mt-6 bg-black text-white p-6" id="plantrip">
+    <div class="container mx-auto flex flex-col items-center">
       <!-- card -->
-      <div class="card mr-auto">
-        <h2 class="text-2xl font-bold">
+      <div class="items-center">
+        <h2 class="text-2xl font-bold mb-4"> <!-- Add mb-4 for bottom margin -->
           Your trip to Indonesia is just around the corner
         </h2>
-        <p class="mt-6">
+        <p class="mt-4 mb-4 text-md"> <!-- Adjust mt-4 and add mb-4 for bottom margin -->
           Get ready to explore a land of tropical paradise, lively culture,
           and mouthwatering food. From the vibrant streets of Bali to the
           stunning beaches of Komodo, Indonesia is full of adventures
           waiting for you!
         </p>
-        <a href="#" class="flex items-center mt-4 font-semibold hover:text-orange-400">
-          Plan a trip to Indonesia
+        <a href="#" class="text-lg flex items-center mt-4 mb-4 font-semibold hover:text-orange-400">
+          Plan a trip
           <box-icon name="right-arrow-alt" class="ml-2 fill-current"></box-icon>
         </a>
       </div>
+
       <!-- map -->
-      <div id="map" class="h-64 w-full"></div>
+      <div id="map" class="md:w-1/2 h-64 w-full md:h-[400px] mt-4 md:mt-0"></div>
     </div>
   </section>
 
-  <!-- form plan trip -->
-
   <!-- footer -->
-   <footer id="footer">
-
-   </footer>
+  <footer class="bg-black text-white p-6">
+    <div class="container mx-auto text-center text-sm sm:text-md">
+      <p class="mb-2">&copy; 2024 Visit Indonesia. All rights reserved by <a href="https://github.com/friskaam" class="hover:underline hover:text-orange-400" target="_blank">Friska Mahardini</a>.</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#" class="hover:text-orange-400">Privacy Policy</a>
+        <a href="#" class="hover:text-orange-400">Terms of Service</a>
+        <a href="#" class="hover:text-orange-400">Contact Us</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- scripts -->
   <script src="script.js"></script>

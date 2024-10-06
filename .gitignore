@@ -1,1 +1,4 @@
 node_modules/
+src/map.html
+postcss.config.js
+settings.json

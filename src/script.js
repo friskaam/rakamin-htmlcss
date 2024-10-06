@@ -1,25 +1,24 @@
 // hamburger menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
 
 hamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
+  mobileMenu.classList.toggle('opacity-0');
+  mobileMenu.classList.toggle('pointer-events-none');
+  mobileMenu.classList.toggle('flex');
 });
 
-let lastScrollTop = 0;
-const header = document.getElementById('header');
+closeMenu.addEventListener('click', () => {
+  mobileMenu.classList.add('hidden');
+  mobileMenu.classList.add('opacity-0');
+  mobileMenu.classList.add('pointer-events-none');
+  mobileMenu.classList.remove('flex');
+});
 
 window.onscroll = function () {
-  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (currentScrollTop > lastScrollTop) {
-    header.classList.add('translate-y-[-100%]');
-  } else {
-    header.classList.remove('translate-y-[-100%]');
-  }
-
-  lastScrollTop = currentScrollTop;
-
+  const header = document.getElementById('header');
   const startSection = document.getElementById('start');
   const startPosition = startSection.getBoundingClientRect().top;
 
@@ -29,7 +28,6 @@ window.onscroll = function () {
     header.classList.add('border-b', 'shadow');
   }
 };
-
 
 // carousel
 const slides = document.querySelectorAll('.carousel-slide');

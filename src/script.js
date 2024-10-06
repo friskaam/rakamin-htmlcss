@@ -17,9 +17,22 @@ closeMenu.addEventListener('click', () => {
   mobileMenu.classList.remove('flex');
 });
 
+// sticky header
+let lastScrollTop = 0;
+const header = document.getElementById('header');
+
 window.onscroll = function () {
-  const header = document.getElementById('header');
-  const startSection = document.getElementById('start');
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScrollTop > lastScrollTop) {
+    header.classList.add('translate-y-[-100%]');
+  } else {
+    header.classList.remove('translate-y-[-100%]');
+  }
+
+  lastScrollTop = currentScrollTop;
+
+  const startSection = document.getElementById('destination');
   const startPosition = startSection.getBoundingClientRect().top;
 
   if (startPosition <= 0) {
@@ -81,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     map.panInsideBounds(bounds);
   });
 
+  // black background
   L.rectangle(
     [
       [90, -180],
@@ -94,11 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
       fillOpacity: 1,
     }
   ).addTo(map);
-
+  
+  // .geojson file process
   fetch("indonesia-prov.geojson")
     .then((response) => response.json())
     .then((data) => {
       const geojsonLayer = L.geoJSON(data, {
+        // style
         style: {
           fillColor: "black",
           color: "orange",
@@ -106,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
           opacity: 1,
           fillOpacity: 1,
         },
+        // hover style
         onEachFeature: (feature, layer) => {
           layer.on("mouseover", () => {
             layer.setStyle({ fillColor: "orange" });

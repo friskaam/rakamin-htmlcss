@@ -17,4 +17,4 @@ Visit Indonesia is a landing page tourism website created as part of the **MSIB7
 - **Explore Destinations**: Highlights beautiful locations in Indonesia.
 - **Things to Do**: Features activities like hiking, diving, and cultural tours.
 - **Gallery**: Displays visual highlights of Indonesia's tourist spots.
-- **Interactive Map**: Includes GeoJSON-based mapping of destinations.
+- **Interactive Map**: Includes GeoJSON-based Indonesia mapping of destinations.
